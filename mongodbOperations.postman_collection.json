@@ -1,0 +1,191 @@
+{
+	"variables": [],
+	"info": {
+		"name": "mongodbOperations",
+		"_postman_id": "958b1e9b-9d28-3ff1-d7b1-89bb17be03c9",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register user",
+			"request": {
+				"url": "{{url}}/register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"firstName\":\"sai\",\n    \"lastName\" : \"thanmai\",\n\t\"username\":\"admin\",\n\t\"password\":\"admin\",\n\t\"isAdmin\":\"true\",\n\t\"email\":\"thnamai@gmail.com\",\n\t\"phone\":\"789009879089\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "upadate user",
+			"request": {
+				"url": "{{url}}/user/update/{{username}}",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"firstName\":\"sai\",\n    \"lastName\" : \"thanmai\",\n\t\"password\":\"admin\",\n\t\"email\":\"thnamai@gmail.com\",\n\t\"phone\":\"789009879089\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"url": "{{url}}/user/delete/{{username}}",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "authToken",
+						"value": "{{authtoken}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"url": "{{url}}/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"admin\",\n\t\"password\":\"admin\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create product",
+			"request": {
+				"url": "{{url}}/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "authToken",
+						"value": "{{authtoken}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"laptop\",\n\t\"manufacturer\":\"lenevo\",\n\t\"serialNumber\": \"ST89798987\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update product",
+			"request": {
+				"url": "{{url}}/update/60c9f95ce04793297469ef6d",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "authToken",
+						"value": "{{authtoken}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n           \"display\": false,\n   \n            \"name\": \"laptop\",\n            \"manufacturer\": \"lenevo\",\n            \"serialNumber\": \"ST89798987\"\n            \n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "read products",
+			"request": {
+				"url": "{{url}}/read",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "authtoken",
+						"value": "{{authtoken}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"_id\":1,\n\t\"name\":\"laptop\",\n\t\"manufacturer\":\"lenevo\",\n\t\"serialNumber\": \"ST89798987\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete product",
+			"request": {
+				"url": "{{url}}/delete/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
